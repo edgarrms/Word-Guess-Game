@@ -1,31 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script>src = "asssets/javascript/game.js" </script>
     <title>Guess What!</title>
-
-
 </head>
 
 <body>
-    <div container>
+    <div>
+        <h1><b>The Psychic Game</b></h1>
 
-        <div>
-            <h1><b>The Psychic Game </b></h1>
-        </div>
-        <div>
-            <p>Guess what letter I'm thinking of</p>
-        </div>
-        <div id="wins">
+        <h2>Guess what letter I'm thinking of:</h2>
 
+        <h2>Wins: <h3 id="wins"> </h3>
+        </h2>
 
-        </div>
+        <h2>Loses: <h3 id="loses"></h3>
+        </h2>
 
+        <h2>Guesses left: <h3 id="guessLeft"></h3>
+        </h2>
+
+        <p id="guessed"></p>
     </div>
+
+    <script type="text/javascript">
+
+
+        function makeid(length) {
+            var result = '';
+            var randomLetters = 'abcdefghijklmnopqrstuvwxyz';
+            var randomLetterLength = randomLetters.length;
+            for (var i = 0; i < length; i++) {
+                result += randomLetters.charAt(Math.floor(Math.random() * randomLetterLength));
+                var
+            }
+            return result; document.textContent(makeid(1));
+            document.writes(makeid(1));
+        }
+
+        var wins = 0;
+        var loses = 0;
+        var guessesLeft = 0;
+        var guessedLetters = [];
+        var letterToGuess = 10;
+        function document.getElementById("wins").onkeypress = function () {
+            document.write("wins"(randomLetters));
+        }
+        // I need to figure out a way to make my wins, loses, guessleft, and guessed to appear on the browser
+        //The browser needs to be able to display the letters that have already been used
+        // The browser needs to be able to reset without refreshing the page, 
+        // I was able to find a way to reset the page by using reset() but I didn't know how to apply it to the code
+        //The functions for wins, loses and guesses needs to be added in order to allow the browser to know when the user/computer have won or loss
+
+
+        function displasy() {
+            var howManyWins = document.getElementById("wins");
+            var howManyLoses = document.getElementById("loses");
+            var howManyGuessesLeft = document.getElementById("guessLeft");
+            var alreadyGuessed = document.getElementById("guessed");
+
+            howManyWins.innerHTML = wins;
+            howManyLoses.innerHTML = loses;
+            howManyGuessesLeft.innerHTML = guessesLeft;
+            alreadyGuessed.innerHTML = guessedLetters.join(',');
+        }
+    </script>
 </body>
 
 </html>
